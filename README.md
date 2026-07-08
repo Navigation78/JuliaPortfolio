@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Julia Migwi — Portfolio
 
-## Getting Started
+A personal portfolio website showcasing my work as a software engineer with a cloud infrastructure focus, built to reflect both my technical projects and my growth through mentorship and community fellowships.
 
-First, run the development server:
+## Live Site
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[Add your deployed link here once live]
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+This portfolio is designed around a forest green, off-white, and burgundy visual identity, with an editorial tone inspired by structured, personal-brand portfolio sites. It brings together my software projects, internship experience, and leadership work in one place, built to speak to both technical and business-oriented audiences.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- **Framework:** Next.js (App Router)
+- **Styling:** Tailwind CSS v4
+- **Fonts:** Lora (display), Karla (body)
+- **File storage:** AWS S3 (CV hosting)
+- **Deployment:** Vercel
+- **Language:** JavaScript
 
-To learn more about Next.js, take a look at the following resources:
+## Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Page | Description |
+|---|---|
+| Home | Introduction, positioning, and featured project previews |
+| About | Personal background, path into tech, skills |
+| Experience | ICT Internship at Kenyatta National Hospital |
+| Projects | FortiBank, Budget Bliss, ReadList, with full write-ups |
+| Fellowship | KamiLimu Mentee Cohort 9 |
+| Leadership | KamiLimu Cloud Engineering Peer Mentor, Shamiri T2 Fellow |
+| Contact | Contact details and CV download |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Featured Projects
 
-## Deploy on Vercel
+- **FortiBank** — A role based cybersecurity training platform built for the banking sector, with live phishing simulations and real time risk scoring.
+- **Budget Bliss** — A serverless budgeting platform that turns raw M-Pesa SMS data into categorized financial insight, fully automated.
+- **ReadList** — A full stack reading tracker with a custom built library ledger interface.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
