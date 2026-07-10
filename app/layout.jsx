@@ -1,4 +1,6 @@
 import { Lora, Karla } from 'next/font/google'
+import Navbar from "@/components/layout/Navbar"
+import Footer from "@/components/layout/Footer"
 import './globals.css'
 
 const lora = Lora({
@@ -16,7 +18,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${lora.variable} ${karla.variable}`}>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   )
