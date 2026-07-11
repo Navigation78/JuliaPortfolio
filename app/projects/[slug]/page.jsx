@@ -1,40 +1,69 @@
 import { notFound } from "next/navigation"
 import { projects } from "@/lib/projects-data"
 
-export function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }))
-}
+export default function ProjectDetail({ params }) {
+  const project = projects.find((p) => p.slug === params.slug)
 
-export default async function ProjectPage({ params }) {
-  const { slug } = await params
-  const project = projects.find((item) => item.slug === slug)
-
+  // If someone visits a slug that doesn't exist, show the 404 page instead of crashing
   if (!project) {
     notFound()
   }
 
   return (
-    <main className="bg-cream min-h-screen px-8 py-20 text-forest-deep md:px-16">
-      <p className="font-body text-sm uppercase tracking-wide text-burgundy">
-        Project
-      </p>
-      <h1 className="font-display mt-3 text-4xl">{project.name}</h1>
-      <p className="font-body mt-6 max-w-2xl leading-relaxed text-forest-deep/75">
-        {project.tagline}
+    <main className="bg-cream px-8 md:px-16 py-20">
+      <h1 className="font-display text-4xl text-forest-deep">
+        {project.name}
+      </h1>
+
+      <p className="font-body text-forest-deep/80 mt-6 max-w-2xl leading-relaxed">
+        {project.description}
       </p>
 
-      <ul className="mt-8 flex flex-wrap gap-3">
-        {project.stack.map((tool) => (
-          <li
-            key={tool}
-            className="border border-forest-sage/30 px-3 py-1 font-body text-sm text-forest-deep/75"
+      <div className="flex flex-wrap gap-2 mt-6">
+        {project.stack.map((tech) => (
+          <span
+            key={tech}
+            className="text-xs font-body text-forest-sage border border-forest-sage/40 px-2 py-1"
           >
-            {tool}
-          </li>
+            {tech}
+          </span>
         ))}
-      </ul>
+      </div>
+
+      <div className="mt-10">
+        <h3 className="font-display text-xl text-forest-deep mb-4">
+          Key features
+        </h3>
+        <ul className="space-y-2 font-body text-forest-deep/80 list-disc pl-5">
+          {project.features.map((feature) => (
+            <li key={feature}>{feature}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="flex gap-6 mt-10 font-body">
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-burgundy hover:text-burgundy-light transition-colors"
+          >
+            View on GitHub
+          </a>
+        )}
+
+        {project.live && (
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-burgundy hover:text-burgundy-light transition-colors"
+          >
+            Live demo
+          </a>
+        )}
+      </div>
     </main>
   )
 }
