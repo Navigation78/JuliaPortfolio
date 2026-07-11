@@ -1,23 +1,18 @@
-import Link from "next/link"
+import SectionHeading from "@/components/shared/SectionHeading"
+import ProjectCard from "@/components/projects/ProjectCard"
 import { projects } from "@/lib/projects-data"
 
-export default function ProjectsPage() {
+export default function Projects() {
   return (
-    <main className="bg-cream min-h-screen px-8 py-20 text-forest-deep md:px-16">
-      <h1 className="font-display text-4xl">Projects</h1>
+    <main className="bg-cream px-8 md:px-16 py-20">
+      <SectionHeading
+        title="Projects"
+        subtitle="A look at what I've built"
+      />
 
-      <div className="mt-10 grid gap-8 md:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-3">
         {projects.map((project) => (
-          <Link
-            key={project.slug}
-            href={`/projects/${project.slug}`}
-            className="block border border-forest-sage/30 p-6 transition-colors hover:border-burgundy"
-          >
-            <h2 className="font-display text-xl">{project.name}</h2>
-            <p className="font-body mt-3 text-sm leading-relaxed text-forest-deep/70">
-              {project.tagline}
-            </p>
-          </Link>
+          <ProjectCard key={project.slug} project={project} />
         ))}
       </div>
     </main>
